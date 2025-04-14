@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+
+        }
+
+        .navigation {
+            width: 100%;
+            position: fixed;
+            z-index: 1;
+            
+
+        }
+
+        div li {
+
+            display: inline-block;
+            list-style: none;
+            margin-inline: 10px;
+            padding-inline: 5px;
+            margin-bottom: 5px;
+
+        }
+
+        .navigation img {
+            position: relative;
+            top: 10px;
+            left: 10px;
+            cursor: pointer;
+        }
+
+        .position {
+            position: relative;
+            bottom: 20px;
+            left: 20%;
+            margin-inline: 20px;
+            padding: 25px 25px;
+        }
+
+        .button {
+            position: relative;
+            bottom: 20px;
+            left: 35%;
+
+        }
+
+        div li button {
+            background-color: rgb(119, 198, 227);
+            color: rgb(33, 63, 255);
+            border-radius: 30px;
+            margin-inline: 20px;
+            padding: 15px;
+            cursor: pointer;
+            font-weight: bolder;
+        }
+
+        .position:hover {
+            background-color: rgb(84, 127, 255);
+            color: white;
+            cursor: pointer;
+        }
+
+        .left {
+            float: left;
+            width: 50%;
+            margin: 135px 65px;
+            padding: 80px 170px;
+        }
+
+        .first {
+            font-size: 2rem;
+            font-weight: 900;
+            color: rgb(85, 85, 85);
+
+        }
+
+        span {
+            color: rgb(50, 91, 251);
+        }
+
+        .second {
+            font-weight: lighter;
+            color: lightslategray;
+        }
+
+        .left button {
+            background-color: rgb(119, 198, 227);
+            color: white;
+            border-radius: 30px;
+            margin: 15px 20px;
+            padding: 20px 80px;
+            cursor: pointer;
+            font-weight: bolder;
+        }
+
+        .right img {
+            width: 335px;
+            position: relative;
+            top: 160px;
+            left: 85px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navigation">
+        <li><img src="image.jpeg" alt="logo" width="135px" height="65px"></li>
+        <li class="position">Home</li>
+        <li class="position">Services</li>
+        <li class="position">About Us</li>
+        <li class="position">Contact Us</li>
+        <li class="button"><button>Username</button></li>
+    </div>
+    <div class="left">
+        <p class="first"> Revitalize your clothes with Expert <span><strong>Laundry Services!</strong></span> </p>
+        <p class="second"> From premium dry cleaning to swift wash and fold, we deliver care and convenience. Schedule a
+            pickup and rediscover the freshness of your clothes today!
+        </p>
+
+        <button>Book a Service Today!</button>
+
+    </div>
+
+    <div class="right">
+        <img src="mainimg.jpeg" alt="image">
+    </div>
+</body>
+
+</html>

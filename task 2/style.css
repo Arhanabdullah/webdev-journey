@@ -1,0 +1,37 @@
+body{
+    background-color: orange;
+}
+.head{
+    color: darkblue;
+}
+#bglime {
+    background-color: lime;
+}
+p{
+    color: white;
+}
+#para{
+    color: green;
+}
+.head span{
+    color: red;
+}
+p span{
+    color: black;
+    font-size: x-large;
+}
+.upskill, .google{
+    color: white;
+}
+.upskill a{
+    background-color: yellow;
+}
+.google a{
+    background-color: purple;
+}
+ol :nth-child(2){
+    color: blue;
+}
+ol :nth-child(3){
+    color: red;
+}

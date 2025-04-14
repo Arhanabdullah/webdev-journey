@@ -1,0 +1,198 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #333;
+  color: white;
+}
+
+.logo img {
+  width: 120px;
+  height: 70px;
+}
+
+.hamburger {
+  display: none; 
+  background: none;
+  border: none;
+  color: white;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+
+.menu {
+  position: absolute;
+  right: 0;
+  top: 0;
+  background-color: #444;
+  width: 200px;
+  display: none; 
+  z-index: 1000;
+}
+
+.menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu ul li {
+  padding: 15px;
+  border-bottom: 1px solid #555;
+}
+
+.menu ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+button{
+  background-color: rgb(192, 247, 247);
+  padding: 20px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
+.btn{
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+
+.animate {
+  transform: rotate(0deg) scaleX(1);
+  transition: transform 0.8s ease-in-out;
+}
+
+.animate:hover {
+  transform: rotate(-10deg) scaleX(1.25);
+}
+@media (max-width: 650px) {
+  .hamburger {
+      display: block; 
+  }
+  
+  .hamburger:focus + .menu,
+  .hamburger:focus-within + .menu {
+      display: block; 
+  }
+}
+.username button {
+  font-size: 1rem;
+  background-color: rgb(169, 252, 252);
+  padding: 12px;
+  border-radius: 120px;
+  cursor: pointer;
+  margin-right: 20px;
+}
+
+
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+}
+
+.hero-text {
+  max-width: 50%;
+}
+
+.hero-text h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+
+
+.hero-image img {
+ margin-top: 24px;
+  padding-right: 124px;
+  max-width: 100%;
+  height: 80vh;
+}
+
+
+@media (max-width: 1024px) {
+  .navbar .nav-links {
+    font-size: 0.9rem;
+  }
+
+  .hero {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero-text {
+    max-width: 90%;
+  }
+
+  .hero-text h1 {
+    font-size: 2rem;
+  }
+
+  .hero-text p {
+    font-size: 1rem;
+  }
+
+  .hero-image {
+    margin-top: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar .nav-links {
+    display: none;
+  }
+
+  .navbar .logo, .navbar .username {
+    font-size: 1rem;
+  }
+
+  .hero-text h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero-text p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 1rem;
+  }
+
+  .hero-text h1 {
+    font-size: 1.5rem;
+  }
+
+  .hero-text p {
+    font-size: 0.8rem;
+  }
+}
+
+
+h2{
+  color: rgb(26, 235, 235);
+  font-size: 35px;
+  margin-bottom: 10px;
+  margin-top: -15px;
+}
+.hero .hero-text p{
+  font-size: 15px;
+  font-weight: lighter;
+}
+
