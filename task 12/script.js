@@ -1,49 +1,60 @@
-var num=21;
-console.log('The number is',num);
+let number=153;
+let sumfirst= (number*(number+1))/2;
+console.log('Sum of first N numbers is', sumfirst);
 
-var i;
-var sum=0;
-for(i=0;i<=num;i++){
-    sum+=i;
-}
-console.log('The sum of the numbers are ', sum);
-
-product=1;
-console.log('The table of number',num,'is');
-for(i=1;i<=12;i++){
-    product=i*num;
-    
+console.log("The table of ", number, 'is');
+for(let i=1;i<=12;i++){
+    let product=i*number;
     console.log(product);
 }
 
-var factor=0
-for(i=0;i<=num;i++){
-    if(num%i==0){
-        factor+=1;
-    }
-    
+let isPrime = true;
+if (number <= 1) {
+    isPrime = false;
 }
-if(factor<=2){
-console.log("The number is prime number");
+else {
+    for (let i = 2; i <= number/2; i++) {
+        if (number % i === 0) {
+            isPrime = false;
+            break;
+        }
+    }
+}
+if(isPrime==true){
+    console.log(`The number entered is a prime number`);
 }
 else{
-    console.log("The number is not prime number");
+    console.log(`The number entered is not a prime number`);
 }
 
-var fact=0;
-console.log('The factors of', num, 'are');
-for(i=1;i<=num;i++){
-    if (num%i==0) {
-        console.log(i); 
+let factors = 0;
+for (let i = 1; i <= number; i++) {
+    if (number % i === 0) {
+        factors=i;
+        console.log("The factors are ", factors);
     }
 }
 
-var summation=0;
-var rem=0;
-while(num>0){
-    rem=num%10;
-    summation+=rem;
-    
-}
-console.log('The summation of number is ',summation);
 
+var remainder, sumOfDigits = 0;
+while(number>0)
+{
+    remainder = number % 10;
+    sumOfDigits = sumOfDigits + remainder;
+    number = Math.floor(number/10);
+}
+console.log('The sum of the digits are ',sumOfDigits);
+
+let sum = 0;
+let temp = number;
+while (temp > 0) {
+    let remainder = temp % 10;
+    sum += remainder * remainder * remainder;
+    temp = parseInt(temp / 10);
+}
+if (sum == number) {
+    console.log(`The number is an Armstrong number`);
+}
+else {
+    console.log('The number is not an Armstrong number.');
+}
