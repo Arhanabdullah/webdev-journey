@@ -1,0 +1,14 @@
+
+section{
+    margin: 20px;
+    padding: 50px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: large;
+       border-bottom: 2px solid #d8c491;
+}
+section p{
+    margin: 5px;
+    padding: 10px;
+    color: #8A784E;
+
+}
