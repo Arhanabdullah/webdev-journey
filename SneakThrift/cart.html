@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shopping Cart | SneakThrift</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="cart.css" />
+  </head>
+
+  <body>
+    <div class="navbar">
+      <a href="index.html"
+        ><img
+          src="Assets/Pictures/logo.png"
+          alt="SneakThrift Logo"
+          width="150px"
+      /></a>
+      <div class="nav-center">
+        <div class="boxes home"><a href="index.html">Home</a></div>
+        <div class="boxes about"><a href="about.html">About</a></div>
+        <div class="boxes brands"><a href="brands.html">Brands</a></div>
+        <div class="boxes more"><a href="more.html">More</a></div>
+        <div class="boxes contact"><a href="contacts.html">Contact</a></div>
+      </div>
+      <div class="nav-right">
+        <div class="boxes search">
+          <form>Search <input type="search" placeholder="search" /></form>
+        </div>
+        <div class="boxes cart"><a href="cart.html">Cart </a></div>
+        <div class="boxes username"><a href="username.html">Username</a></div>
+      </div>
+    </div>
+
+    <section class="cart-container">
+      <div class="cart-left">
+        <h1>Shopping Cart</h1>
+        <table>
+          <thead>
+            <tr>
+              <th>Product</th>
+              <th>Quantity</th>
+              <th>Price</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                Puma Suede Classic XXI
+              </td>
+              <td>1</td>
+              <td>₹7499</td>
+              <td><span class="remove">X</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="cart-right">
+        <div class="summary-card">
+          <h3>Enter Coupon Code</h3>
+          <input type="text" placeholder="COUPON CODE" />
+          <button class="apply-btn">Apply Coupon</button>
+
+          <div class="summary">
+            <p>Sub Total <span>₹7300</span></p>
+            <p>Taxes <span>₹199</span></p>
+            <p>Discount <span>₹0</span></p>
+            <hr />
+            <p class="total">Total <span>₹7,499</span></p>
+          </div>
+
+          <a href="payement-gateway.html"
+            ><button class="pay-btn">Pay Now ₹7,499</button></a
+          >
+
+          <div class="payment-icons">
+            <img src="Assets/Pictures/razorpay.png" alt="Razorpay" />
+            <img src="Assets/Pictures/secure.png" alt="Secure" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="continue">
+      <a href="brands.html">← Continue Shopping</a>
+    </div>
+  </body>
+</html>
