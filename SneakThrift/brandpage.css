@@ -1,0 +1,53 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: var(--fontcolor);
+}
+.container {
+    margin: 0.8rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 2fr));
+    gap: 0.8rem;
+    padding: 1.6rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.shoes {
+    border-radius: 16px;
+    border: 1px solid;
+    text-align: center;
+    padding: 3.6rem 1.6rem 1.6rem 1.6rem;
+    transition: all 0.3s ease;
+    height: 400px;        
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    background-color: rgb(245, 245, 245);
+    box-shadow: 0 0 6px rgb(0, 0, 0);
+    transition: transform 1s ease .5s;
+}
+.shoes img {
+    max-width: 320px;
+    max-height: 240px;
+    object-fit: fill;
+    margin: 0.8rem;
+    transform: translateY(35px);
+    transition: all 1s ease .5s;
+}
+.shoes:hover{
+box-shadow: 0 0 16px rgba(177, 151, 65, 0.5);
+    transform: translateY(15px) scale(1.05);
+    flex: 1;
+
+}
+.shoes img:hover{
+    transform: translateY(15px) scale(1.1) rotateZ(5deg);
+    flex: 1;
+}
+.shoes p:hover{
+        color: var(--txthover);
+}

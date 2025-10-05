@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SneakThrift Payment</title>
+    <link rel="stylesheet" href="payment-gateway.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <!-- Left Section -->
+        <div class="left-section">
+            <h3>Contact Details</h3>
+            <div class="input-group">
+                <label>Email ID</label>
+                <input type="email" placeholder="abc@xyz.com">
+            </div>
+
+            <h3>Payment</h3>
+            <div class="payment-methods">
+                <div class="method active">💳 Card</div>
+                <div class="method">₿ Crypto</div>
+                <div class="method">🏦 Bank</div>
+            </div>
+
+            <div class="input-group">
+                <label>Card Number</label>
+                <input type="text" placeholder="XXXX XXXX XXXX XXXX">
+            </div>
+
+            <div class="card-details">
+                <input type="text" placeholder="MM/YY">
+                <input type="text" placeholder="CVC">
+            </div>
+
+            <div class="card-details">
+                <select>
+                    <option>India</option>
+                    <option>USA</option>
+                    <option>UK</option>
+                </select>
+                <input type="text" placeholder="ZIP Code">
+            </div>
+        </div>
+
+        <!-- Right Section -->
+        <div class="right-section">
+            <h3>Order Summary</h3>
+            <div class="coupon-box">
+                <input type="text" placeholder="Enter Coupon Code">
+                <button>Apply Coupon</button>
+            </div>
+
+            <div class="summary">
+                <span>Sub Total</span>
+                <span>₹7,300</span>
+            </div>
+            <div class="summary">
+                <span>Taxes (if applicable)</span>
+                <span>₹199</span>
+            </div>
+            <div class="summary">
+                <span>Discount</span>
+                <span>₹0</span>
+            </div>
+            <div class="summary total">
+                <span>Total</span>
+                <span>₹7,499</span>
+            </div>
+
+            <button class="pay-btn">Pay Now ₹7,499</button>
+
+            <div class="payment-logo">
+                <img src="Assets/Pictures/razorpay.png" alt="Razorpay">
+                <img src="Assets/Pictures/secure.png" alt="Secure">
+            </div>
+        </div>
+    </div>
+    
+        <div class="back"><a href="cart.html">← Back To Cart</a></div>
+    
+</body>
+
+</html>
