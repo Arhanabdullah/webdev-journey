@@ -1,0 +1,113 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Times New Roman", Times, serif;
+  overflow-x: hidden;
+}
+body {
+  background-color: #efebe9;
+}
+nav {
+  position: sticky;
+  top: 0px;
+  margin-bottom: 10px;
+  padding: 32px;
+  border-bottom: 1px solid black;
+  border-radius: 0px 0px 10px 10px;
+  height: 10vh;
+  width: 100vw;
+  background-color: #d9d7d7;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0px 0px 8px #2b2b2b;
+}
+.navbar h3 {
+  color: #7f4f24;
+}
+
+.navbar button {
+  margin: 4px;
+  padding: 8px 12px;
+  border-radius: 12px;
+  border: blue;
+  font-weight: bold;
+  color: #eef4ed;
+  background-color: #113969;
+  transition: all 0.5ms ease-in-out 0.5ms;
+}
+
+.navbar button:hover {
+  color: rgb(0, 0, 211);
+  background-color: #8da9c4;
+}
+.search-bar {
+    background-color: #d9d7d7;
+    padding: 20px;
+    margin-left: 10px;
+  position: sticky;
+  top: 80px;
+  border-radius: 20px;
+  border: 1px solid #7b655e;
+}
+.search-bar button {
+  margin: 4px;
+  padding: 10px;
+  border-radius: 16px;
+  border: 1px solid;
+  color: #7b655e;
+  font-weight: bold;
+  transition: all 0.8s ease 0.1s;
+}
+.search-bar button:hover {
+  background-color: #795548;
+  color: #d9d7d7;
+}
+.search-bar input {
+  margin: 4px;
+  padding: 4px;
+  border-radius: 12px;
+  border: 1px;
+}
+.container {
+  display: grid;
+  grid-template-columns: 240px 240px 240px 240px;
+  gap: 0.8rem;
+  padding: 1.6rem;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.search-results{
+  display: block;
+  width: 100%;
+  margin: 10px;
+  padding: 4px 28px;
+  height: 32px;
+  color: #7b655e; 
+}
+.cards {
+  padding-left: 10px;
+  height: 160px;
+  width: 240px;
+  border-radius: 12px;
+  border: 1px solid rgb(80, 61, 61);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  background-color: #967e76;
+  box-shadow: 2px 2px 4px #b99487;
+  color: #fff7f3;
+
+}
+
+.cards:hover {
+  cursor: pointer;
+  background-color: #f6d8cd;
+  color: #7b655e;
+  box-shadow: 2px 2px 16px #795548;
+}
+.cards[hidden] {
+  display: none;
+}
