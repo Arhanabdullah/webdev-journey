@@ -1,164 +1,206 @@
-@import url('https://fonts.googleapis.com/css2?family=Martel+Sans:wght@200;300;400;600;700;800;900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Zain:ital,wght@0,200;0,300;0,400;0,700;0,800;0,900;1,300;1,400&display=swap');
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Zain", sans-serif;
-  font-size: 1.1rem;
-  font-weight: bold;
-  font-style: normal;
-  background-color: #ADB2D4;
-}
+@import url("https://fonts.googleapis.com/css2?family=Martel+Sans:wght@200;300;400;600;700;800;900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Zain:ital,wght@0,200;0,300;0,400;0,700;0,800;0,900;1,300;1,400&display=swap");
 
-h1 {
-  padding-top: 24px;
-  padding-bottom: 80px;
-  font-weight: bold;
-  text-align: center;
-  font-size: 3.5rem;
-}
 
-.output-show{
-  padding: 0px 8px;
-  margin: 0px 30em;
-  border-radius: 14px;
-  height: 80px;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  background-color: #C7D9DD;
-}
-.output-show:empty::before {
-  content: "0";
-  font-size: large;
-  color: gray;
-}
-.container {
-  border-radius: 12px;
-  padding: 8px;
-  margin: 0.5% 37.5%;
-  display: grid;
-  width: 25%;
-  grid-template-columns: 80px 80px 80px 80px;
-  justify-content: center;
-  justify-items: center;
-  align-items: center;
-  gap: 4px;
-  background-color: #D5E5D5;
-  box-shadow: 4px 4px 8px #EEF1DA;
-}
-.boxes {
-  width: 80px;
-  height: 60px;
-  border: 1px solid;
-  border-radius: 14px;
-  gap: 2px;
-  display: flex;
-  text-align: center;
-  justify-content: center;
-  align-items: center;
-  justify-items: center;
-  background-color: #EEF1DA;
-  transition: all .5s ease .1s;
-}
-.boxes:hover {
-  background-color: #ADB2D4 ;
-}
+:root {
+  --bg-color: #f5f1ee;        /* warm light beige */
+--display-bg: #ffffff;      /* pure white */
+--button-bg: #d8cfc7;       /* muted taupe */
+--button-hover: #c3b8ae;    /* darker taupe on hover */
+--accent: #7c6655;          /* deep muted brown */
+--text-color: #2e2e2e;      /* charcoal gray */
 
-.box1 {
-  grid-column: 1/2;
-  grid-row: 4/5;
-}
 
-.box2 {
-  grid-column: 2/3;
-  grid-row: 4/5;
 }
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Zain", sans-serif;
+    background-color: var(--bg-color);
+    user-select: none;
+  }
 
-.box3 {
-  grid-column: 3/4;
-  grid-row: 4/5;
-}
 
-.box4 {
-  grid-column: 1/2;
-  grid-row: 3/4;
-}
+  h1 {
+    padding-top: 40px;
+    padding-bottom: 60px;
+    text-align: center;
+    font-size: 4rem;
+    color: var(--text-color);
+  }
 
-.box5 {
-  grid-column: 2/3;
-  grid-row: 3/4;
-}
 
-.box6 {
-  grid-column: 3/4;
-  grid-row: 3/4;
-}
+  .output-show {
+    margin: 0 auto 40px;
+    width: 340px;
+    height: 90px;
+    border-radius: 14px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0 20px;
+    font-size: 1.6rem;
+    color: var(--text-color);
+    background-color: var(--display-bg);
+    box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.08);
+  }
 
-.box7 {
-  grid-column: 1/2;
-  grid-row: 2/3;
-}
+  .output-show:empty::before {
+    content: "0";
+    color: var(--text-color);
+    opacity: 0.6;
+  }
 
-.box8 {
-  grid-column: 2/3;
-  grid-row: 2/3;
-}
+  .container {
+    display: grid;
+    grid-template-columns: repeat(4, 80px);
+    gap: 8px;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 16px;
+    background-color: var(--bg-color);
+    box-shadow: 0 8px 15px rgba(94, 115, 85, 0.1);
+  }
 
-.box9 {
-  grid-column: 3/4;
-  grid-row: 2/3;
-}
+  .boxes {
+    width: 80px;
+    height: 60px;
+    border: none;
+    border-radius: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--button-bg);
+    color: var(--text-color);
+    font-weight: bold;
+    transition: all 0.25s ease-in-out;
+    cursor: pointer;
+  }
 
-.box10 {
-  grid-column: 2/3;
-  grid-row: 5/6;
-}
+  .boxes:hover {
+    background-color: var(--button-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  }
 
-.box11 {
-  grid-column: 4/5;
-  grid-row: 5/6;
-}
 
-.box12 {
-  grid-column: 4/5;
-  grid-row: 4/5;
-}
+  .box11,
+  .box12,
+  .box13,
+  .box14,
+  .box15 {
+    background-color: var(--accent);
+    color: #fff;
+  }
 
-.box13 {
-  grid-column: 4/5;
-  grid-row: 3/4;
-}
+  .box11:hover,
+  .box12:hover,
+  .box13:hover,
+  .box14:hover,
+  .box15:hover {
+    background-color: #534134;
+    box-shadow: 0 4px 8px rgba(115, 100, 85, 0.25);
+  }
 
-.box14 {
-  grid-column: 4/5;
-  grid-row: 2/3;
-}
+  .box1 {
+    grid-column: 1/2;
+    grid-row: 4/5;
+  }
 
-.box15 {
-  grid-column: 3/4;
-  grid-row: 5/6;
-}
+  .box2 {
+    grid-column: 2/3;
+    grid-row: 4/5;
+  }
 
-.box16 {
-  grid-column: 3/4;
-  grid-row: 1/2;
-}
+  .box3 {
+    grid-column: 3/4;
+    grid-row: 4/5;
+  }
 
-.box17 {
-  grid-column: 1/2;
-  grid-row: 1/2;
-}
+  .box4 {
+    grid-column: 1/2;
+    grid-row: 3/4;
+  }
 
-.box18 {
-  grid-column: 2/3;
-  grid-row: 1/2;
-}
-.box19 {
-  grid-column: 1/2;
-  grid-row: 5/6;
-}
-.box20 {
-  grid-column: 4/5;
-  grid-row: 1/2;
-}
+  .box5 {
+    grid-column: 2/3;
+    grid-row: 3/4;
+  }
+
+  .box6 {
+    grid-column: 3/4;
+    grid-row: 3/4;
+  }
+
+  .box7 {
+    grid-column: 1/2;
+    grid-row: 2/3;
+  }
+
+  .box8 {
+    grid-column: 2/3;
+    grid-row: 2/3;
+  }
+
+  .box9 {
+    grid-column: 3/4;
+    grid-row: 2/3;
+  }
+
+  .box10 {
+    grid-column: 2/3;
+    grid-row: 5/6;
+  }
+
+  .box11 {
+    grid-column: 4/5;
+    grid-row: 5/6;
+  }
+
+  .box12 {
+    grid-column: 4/5;
+    grid-row: 4/5;
+  }
+
+  .box13 {
+    grid-column: 4/5;
+    grid-row: 3/4;
+  }
+
+  .box14 {
+    grid-column: 4/5;
+    grid-row: 2/3;
+  }
+
+  .box15 {
+    grid-column: 3/4;
+    grid-row: 5/6;
+  }
+
+  .box16 {
+    grid-column: 3/4;
+    grid-row: 1/2;
+  }
+
+  .box17 {
+    grid-column: 1/2;
+    grid-row: 1/2;
+  }
+
+  .box18 {
+    grid-column: 2/3;
+    grid-row: 1/2;
+  }
+
+  .box19 {
+    grid-column: 1/2;
+    grid-row: 5/6;
+  }
+
+  .box20 {
+    grid-column: 4/5;
+    grid-row: 1/2;
+  }
