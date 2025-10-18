@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Service Booking App</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="logo">Logo</div>
+    <ul class="nav-links">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">About Us</a></li>
+      <li><a href="#">Contact Us</a></li>
+    </ul>
+    <div class="user-section">
+      <span class="username">Username</span>
+      <button class="logout-btn">⎋</button>
+    </div>
+  </nav>
+
+  <main class="container">
+
+    <section class="left-section">
+      <div class="added-items card">
+        <h3>Added Items</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>S.No</th>
+              <th>Service Name</th>
+              <th>Price</th>
+            </tr>
+          </thead>
+          <tbody id="item-list">
+            <tr class="empty-row">
+              <td colspan="3" class="no-items">
+                <div class="emptycart"><div class="no-items-icon">ⓘ</div>
+                <p>No Items Added</p>
+                <span>Add items to the cart from the services bar</span></div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="total">
+          <p>Total Amount</p>
+          <span id="total-amount">₹ 0</span>
+        </div>
+      </div>
+
+      <div class="booking-form card">
+        <h3>Book Now</h3>
+        <form autocomplete="off">
+  <label for="fullname" class="full-name">Full Name</label>
+  <input type="text" id="fullname" placeholder="John Doe">
+
+  <div class="input-row">
+    <div>
+      <label for="email">Email ID</label>
+      <input type="email" id="email" placeholder="mail@mail.com">
+    </div>
+
+    <div>
+      <label for="phone">Phone Number</label>
+      <input type="tel" id="phone" placeholder="7895600609">
+    </div>
+  </div>
+
+  <button type="button" class="book-now-btn">Book Now</button>
+</form>
+
+      </div>
+    </section>
+
+
+    <section class="right-section">
+      <div class="browse card">
+        <h2>Browse Our Services</h2>
+        <p class="st">Click on the add to cart button to add the services to your cart or press skip.</p>
+
+        <div class="service-item">
+          <img src="" alt="" />
+          <div class="service-details">
+            <h4></h4>
+            <span class="price">₹</span>
+          </div>
+          <div class="service-buttons">
+            <button class="skip-btn">Skip Item</button>
+            <button class="add-btn">Add Item</button>
+          </div>
+        </div>
+
+        <p class="note">🛒 Add the items to the cart and book now</p>
+      </div>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
