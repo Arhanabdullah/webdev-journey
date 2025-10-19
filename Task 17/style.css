@@ -204,12 +204,10 @@ body {
 }
 
 .service-item img {
-  padding-top: 40px;
-  min-height: 160px;
-  min-width: 160px;
-  max-width: 200px;
-  max-height: 200px;
-  object-fit: contain;
+  padding: 40px 20px;
+  max-height: 160px;
+  max-width: 160px;
+  object-fit:contain;
 }
 
 .service-details {
@@ -228,6 +226,7 @@ body {
   display: flex;
   justify-content: center;
   gap: 1rem;
+  position: static;
 }
 
 .skip-btn, .add-btn {

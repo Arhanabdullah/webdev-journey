@@ -103,15 +103,21 @@ const itemListBody = document.getElementById("item-list");
 const totalAmountSpan = document.getElementById("total-amount");
 const emptyRow = itemListBody.querySelector(".empty-row");
 function displayServices() {
-
     if(laundryServices.length === 0) return;
-
     const service = laundryServices[serviceIndex];
-    h4.textContent = service.name;
-    img.setAttribute("src", service.image);
-    img.setAttribute("alt", service.name);
+    h4.textContent = `${service.name}`;
+    img.setAttribute("src", `${service.image}`);
+    img.setAttribute("alt", `${service.name}`);
     price.textContent = `₹ ${service.price}`;
 }
+displayServices();
+
 skipButton.addEventListener("click", function () {
-    services();
+    serviceIndex++;
+    displayServices();
+});
+addButton.addEventListener("click", function () {
+    serviceIndex++;
+    displayServices();
+    
 });
