@@ -66,3 +66,30 @@ let Bank = (function () {
 })();
 
 Bank.check();
+
+
+// Factory Function Pattern
+
+function createProduct(name, price) {
+    let stock = 10;
+    return {
+        name,
+        price,
+        buy(qty) {
+            if (qty > stock) console.log("Product ordered Exceeded stock limit") 
+            else {
+                stock -= qty;
+                console.log(`${qty} Booked, ${stock} left`);
+            }
+
+        },
+        refill(qty) {
+            stock += qty;
+            console.log(`Stock Updated. Total Stock ${stock}`);
+        },
+        
+    }
+}
+
+let cycle = createProduct("cycle", 5000)
+cycle.buy(8);
