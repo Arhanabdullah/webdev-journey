@@ -16,12 +16,13 @@ body {
 
 .download-box {
   background: rgba(255, 255, 255, 0.05);
-  padding: 40px 60px;
+  padding: 60px;
   border-radius: 16px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
   text-align: center;
   backdrop-filter: blur(8px);
   width: 320px;
+  height: 200px;
   justify-content: center;
   align-items: center;
 }
@@ -39,7 +40,7 @@ body {
   background: rgba(255, 255, 255, 0.1);
   border-radius: 10px;
   overflow: hidden;
-  margin-bottom: 15px;
+  margin-bottom: 16px;
 }
 
 .progress {
