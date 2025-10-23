@@ -16,7 +16,7 @@ let tm =()=>{
     } else {
       txt.textContent = "Downloaded.";
       clearInterval(interval);
-      
+      button.textContent="Download Again!";
     }
   }, 100);
 };
