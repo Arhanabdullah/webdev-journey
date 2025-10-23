@@ -13,6 +13,7 @@ let tm =()=>{
       progress.style.width = `${count}%`;
       percentage.textContent = `${count}%`;
       txt.textContent = "Downloading...";
+      button.textContent="Start Download"
     } else {
       txt.textContent = "Downloaded.";
       clearInterval(interval);
