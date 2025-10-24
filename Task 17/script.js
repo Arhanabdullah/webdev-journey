@@ -93,6 +93,7 @@ const laundryServices = [
 let serviceIndex = 0;
 let addedItems = [];
 let totalAmount = 0;
+
 let serviceItem = document.querySelector(".service-item");
 let img = document.querySelector("img");
 let h4 = document.querySelector("h4");
@@ -102,22 +103,47 @@ const addButton = document.querySelector(".add-btn");
 const itemListBody = document.getElementById("item-list");
 const totalAmountSpan = document.getElementById("total-amount");
 const emptyRow = itemListBody.querySelector(".empty-row");
+
+
+
 function displayServices() {
-    if(laundryServices.length === 0) return;
+    if (laundryServices.length === 0) return;
     const service = laundryServices[serviceIndex];
-    h4.textContent = `${service.name}`;
+    h4.textContent = service.name;
     img.setAttribute("src", `${service.image}`);
     img.setAttribute("alt", `${service.name}`);
     price.textContent = `₹ ${service.price}`;
 }
-displayServices();
+
 
 skipButton.addEventListener("click", function () {
-    serviceIndex++;
+    serviceIndex = (serviceIndex + 1) % laundryServices.length;
     displayServices();
 });
 addButton.addEventListener("click", function () {
-    serviceIndex++;
-    displayServices();
     
+    const service = laundryServices[serviceIndex];
+    addedItems.push(service);
+    totalAmount += service.price;
+
+    if (emptyRow) emptyRow.remove();
+
+
+    itemListBody.innerHTML = "";
+
+    addedItems.forEach((item, index) => {
+        const tr = document.createElement("tr");
+        tr.innerHTML = `
+        <td>${index + 1}</td>
+        <td>${item.name}</td>
+        <td>₹ ${item.price}</td>
+        `;
+        itemListBody.appendChild(tr);
+    });
+
+
+    totalAmountSpan.textContent = `₹ ${totalAmount}`;
+    serviceIndex = (serviceIndex + 1) % laundryServices.length;
+    displayServices();
 });
+displayServices();

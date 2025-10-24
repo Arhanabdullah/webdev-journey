@@ -96,11 +96,11 @@ body {
 .added-items table {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 1rem;
+  margin-top: 0.4rem;
 }
 
 .added-items th, .added-items td {
-  padding: 0.5rem;
+  padding: 0.4rem;
   text-align: left;
   color: #555;
 }
@@ -205,8 +205,8 @@ body {
 
 .service-item img {
   padding: 40px 20px;
-  max-height: 160px;
-  max-width: 160px;
+  height: 200px;
+  width: 250px;
   object-fit:contain;
 }
 
