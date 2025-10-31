@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="style.css">
 </head>
   <body class="light"> 
-    <nav class="toggle"><button>Change Theme</button></nav>
+    <nav class="toggle"><div><button class="btn" type="button">Change Theme</button></div></nav>
     
     <div class="container">
     <h2>Email & Password Validator</h2>
@@ -25,10 +25,12 @@
         <small class="error" id="passwordError"></small>
       </div>
 
-      <button type="submit">Validate</button>
+      <button type="submit" class="button">Validate</button>
     </form>
+    
   </div>
-
+  
+  <div class="validation-message" id="validationMessage"></div>
   <script src="script.js"></script>
 </body>
 </html>

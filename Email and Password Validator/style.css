@@ -5,50 +5,129 @@
   font-family: "Poppins", sans-serif;
 }
 
-:root{
-    --bg-light: #e4e4e4;
-    --text-light: #1a1a1a;
-    --bg-dark:#2a2a2a;
-    --text-dark: #f5f5f5;
+html, body {
+  height: 100%;
 }
-body.light{
-    background-color: var(--bg-light);
-    color: var(--text-light);
+
+
+:root {
+
+  --body-bg-light: hsl(210, 38%, 95%);
+  --container-bg-light: hsl(0, 0%, 100%);
+  --input-bg-light: hsl(210, 25%, 97%);
+  --heading-text-light: hsl(210, 15%, 15%);
+  --label-text-light: hsl(210, 10%, 30%);
+  --placeholder-light: hsl(210, 10%, 55%);
+  --box-shadow-light: 0 6px 15px rgba(0, 0, 0, 0.1);
+  --accent-light: hsl(35, 90%, 60%);
+  --cta-light: hsl(35, 90%, 60%);
+
+
+  --body-bg-dark: hsl(220, 15%, 10%);
+  --container-bg-dark: hsl(220, 15%, 17%);
+  --input-bg-dark: hsl(220, 15%, 20%);
+  --heading-text-dark: hsl(0, 0%, 100%);
+  --label-text-dark: hsl(220, 15%, 75%);
+  --placeholder-dark: hsl(220, 15%, 55%);
+  --box-shadow-dark: 4px 4px 8px rgba(255, 255, 255, 0.06);
+--accent-dark: hsl(35, 80%, 50%);
+--cta-dark: hsl(35, 80%, 50%);
+
+
 }
-body.dark{
-    background-color: var(--bg-dark);
-    color: var(--text-dark);
+
+body.light {
+  background-color: var(--body-bg-light);
+  color: var(--heading-text-light);
+  box-shadow: var(--box-shadow-light);
 }
+
+
+body.dark {
+  background-color: var(--body-bg-dark);
+  color: var(--heading-text-dark);
+  box-shadow: var(--box-shadow-dark);
+}
+
+
 body {
   height: 100vh;
   display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
-  background: linear-gradient(135deg, #f8f9fa, #e2e6ea);
+  position: relative;
+  margin: 0;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
-nav{
-  display: flex;
-position: absolute;
-  left: 90%;
-  top: 4%;
-  align-items: center;
-}
-.container {
-  background: #fff;
+
+
+nav {
   position: absolute;
-  left: 40%;
-  bottom: 35%;
-  padding: 2rem 2.5rem;
+  top: 20px;
+  right: 36px;
+  padding: 12px 36px;
+}
+
+nav .btn {
+  padding: 0.7rem 1rem;
+  border: none;
+  background: var(--button-bg-light);
+  color: #fff;
+  font-weight: 600;
+  border-radius: 0.6rem;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+body.light nav .btn {
+  background-color: var(--accent-light);
+  color: var(--heading-text-dark);
+  transition: all 0.3s ease;
+}
+
+
+body.light nav .btn:hover {
+  transform: scaleX(1.1);
+  color: var(--heading-text-light);
+  background-color: var(--accent-dark);
+}
+
+
+body.dark nav .btn {
+  background-color: var(--accent-dark);
+  color: var(--heading-text-light);
+  transition: all 0.3s ease;
+}
+
+
+body.dark nav .btn:hover {
+  color: var(--heading-text-dark);
+  background-color: var(--accent-light);
+  transform: scaleX(1.1);
+}
+
+
+.container {
+  background: var(--container-bg-light);
+  padding: 2.5rem;
   border-radius: 1rem;
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
   width: 350px;
+  box-shadow: var(--box-shadow-light);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+body.dark .container {
+  background: var(--container-bg-dark);
+  box-shadow: var(--box-shadow-dark);
 }
 
 h2 {
   text-align: center;
   margin-bottom: 1.5rem;
-  color: #333;
+  color: var(--heading-text-light);
+  transition: color 0.3s ease;
+}
+body.dark h2 {
+  color: var(--heading-text-dark);
 }
 
 .input-group {
@@ -57,45 +136,111 @@ h2 {
 
 label {
   font-weight: 600;
-  color: #444;
+  color: var(--label-text-light);
   display: block;
   margin-bottom: 0.5rem;
+  transition: color 0.3s ease;
 }
+body.dark label {
+  color: var(--label-text-dark);
+}
+
 
 input {
   width: 100%;
   padding: 0.6rem;
-  border: 1px solid #ccc;
+  border: 1px solid hsl(0, 0%, 80%);
   border-radius: 0.5rem;
   outline: none;
-  transition: 0.2s ease;
+  background-color: var(--input-bg-light);
+  color: var(--heading-text-light);
+  transition: all 0.3s ease;
 }
-
 input:focus {
-  border-color: #4a90e2;
-  box-shadow: 0 0 5px rgba(74, 144, 226, 0.3);
+  border-color: var(--button-bg-light);
+  box-shadow: 0 0 5px hsla(220, 90%, 56%, 0.4);
+}
+body.dark input {
+  background-color: var(--input-bg-dark);
+  color: var(--heading-text-dark);
+  border: 1px solid hsl(220, 15%, 35%);
+}
+input:focus {
+  border-color: var(--accent-light);
+  box-shadow: 0 0 6px hsla(35, 90%, 60%, 0.6);
 }
 
-button {
+
+::placeholder {
+  color: var(--placeholder-light);
+  transition: color 0.3s ease;
+}
+body.dark ::placeholder {
+  color: var(--placeholder-dark);
+}
+
+
+.button {
   width: 100%;
   padding: 0.7rem;
   border: none;
-  background: #4a90e2;
+  background: var(--button-bg-light);
   color: #fff;
   font-weight: 600;
   border-radius: 0.5rem;
   cursor: pointer;
-  transition: 0.3s ease;
+  transition: background 0.3s ease;
+}
+body.light .button {
+  background: var(--cta-light);
+  color: #fff;
+}
+body.light .button:hover {
+  background: var(--cta-dark);
 }
 
-button:hover {
-  background: #357abd;
+body.dark .button {
+  background: var(--cta-dark);
+  color: #fff;
 }
+body.dark .button:hover {
+  background: var(--cta-light);
+}
+
 
 .error {
-  color: #e74c3c;
+  color: hsl(0, 79%, 58%);
   font-size: 0.85rem;
   margin-top: 0.3rem;
   display: block;
   min-height: 18px;
+}
+
+.validation-message {
+  position: fixed;
+  top: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--accent-light);
+  color: #fff;
+  padding: 0.8rem 1.2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  z-index: 9999;
+  transform: translateX(-50%) translateY(-10px);
+
+}
+
+.validation-message.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+
+body.dark .validation-message {
+  background: var(--accent-dark);
+  color: #fff;
 }
