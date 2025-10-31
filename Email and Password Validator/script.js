@@ -1,3 +1,4 @@
+let container = document.querySelector(".container");
 function setDarkOrLight() {
     if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
         document.body.classList.add("dark");
@@ -25,7 +26,6 @@ window
     .addEventListener("change", function () {
         setDarkOrLight();
     });
-let container = document.querySelector(".container");
 let btn = document.querySelector(".btn");
 btn.addEventListener("click", function () {
     console.log("Theme button clicked!");
