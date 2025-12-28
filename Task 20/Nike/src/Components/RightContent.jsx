@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
+import CartItem from './CartItem'
+const RightContent = (props) => {
 
-const RightContent = () => {
   return (
-    <div className='px-10 py-14 w-[40%] bg-gray-200'>
-      
+    <div className='px-2   w-[40%] rounded-l-xl rounded-b-xl bg-gray-400 '>
+      <h1 className='font-bold text-6xl my-2 '>Cart</h1>
+      <CartItem shoes={props.shoes}/>
     </div>
   )
 }
