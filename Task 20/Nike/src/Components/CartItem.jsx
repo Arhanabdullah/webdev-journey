@@ -1,14 +1,15 @@
 import React, { useState } from 'react'
-
+import Card from './Card';
 const CartItem = (props) => {
-    console.dir(props)
+    
     const [quantity, setQuantity] = useState(1)
     const addQuantity = () => {
         setQuantity(quantity + 1)
+        
     }
     const reduceQuantity = () => {
         setQuantity(quantity - 1)
-
+        
     }
     return (
         <div className='flex flex-col flex-nowrap'>

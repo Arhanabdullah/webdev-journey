@@ -77,14 +77,19 @@ const App = () => {
     price: 2399
   }
 ];
-
+const addItem = (id) => {
+    console.log(id);
+    console.log(shoes[id])
+    
+    
+  };
 
   return (
-    <div className='bg-gray-100 h-full'>
+    <div>
       <NavBar />
       <div className='flex flex-wrap'>
-      <LeftContent shoes={shoes}/>
-      <RightContent />
+      <LeftContent shoes={shoes} addItem={addItem}/>
+      <RightContent shoes={shoes} addItem={addItem} />
       </div>
     </div>
   )
