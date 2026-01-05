@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import NavBar from './Components/NavBar'
 import RightContent from './Components/RightContent'
 import LeftContent from './Components/LeftContent'
@@ -77,19 +77,59 @@ const App = () => {
     price: 2399
   }
 ];
-const addItem = (id) => {
-    console.log(id);
-    console.log(shoes[id])
-    
-    
-  };
+
+const [cartItems, setCartItems] = useState([]);
+
+  const addItem = (id) => {
+  const shoe = shoes[id];
+
+  setCartItems(prev => {
+    const exists = prev.find(item => item.name === shoe.name);
+
+    if (exists) {
+      return prev.map(item =>
+        item.name === shoe.name
+          ? { ...item, quantity: item.quantity + 1 }
+          : item
+      );
+    }
+
+    return [...prev, { ...shoe, quantity: 1 }];
+  });
+};
+const decreaseItem = (name) => {
+  setCartItems(prev =>
+    prev
+      .map(item =>
+        item.name === name
+          ? { ...item, quantity: item.quantity - 1 }
+          : item
+      )
+      .filter(item => item.quantity > 0)
+  );
+};
+const increaseItem = (name) => {
+  setCartItems(prev =>
+    prev.map(item =>
+      item.name === name
+        ? { ...item, quantity: item.quantity + 1 }
+        : item
+    )
+  );
+};
+const cartTotal = cartItems.reduce(
+  (total, item) => total + item.price * item.quantity,
+  0
+);
+
+
 
   return (
     <div>
       <NavBar />
       <div className='flex flex-wrap'>
       <LeftContent shoes={shoes} addItem={addItem}/>
-      <RightContent shoes={shoes} addItem={addItem} />
+      <RightContent cartItems={cartItems} decreaseItem={decreaseItem} increaseItem={increaseItem} cartTotal={cartTotal}/>
       </div>
     </div>
   )
