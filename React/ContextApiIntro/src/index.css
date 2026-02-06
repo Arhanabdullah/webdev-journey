@@ -1,0 +1,33 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+html , body{
+    height: 100%;
+    width: 100%;
+}
+.navbar{
+  display: flex;
+  background-color: #343131;
+  padding: 12px 36px;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+
+}
+.nav2{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  padding: 8px ;
+  cursor: pointer;
+  
+}
+h4{
+  border:  2px solid rgb(114, 66, 31);
+  border-radius: 12px;
+  padding: 12px;
+}
