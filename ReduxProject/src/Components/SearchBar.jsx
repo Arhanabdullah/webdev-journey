@@ -13,7 +13,7 @@ const SearchBar = () => {
 
     const [text, settext] = useState('')
     return (
-        <div className='p-10'>
+        <div className='p-6'>
             <form
                 className='flex gap-5 items-center'
                 onSubmit={(e) => { submitHandler(e) }}>
