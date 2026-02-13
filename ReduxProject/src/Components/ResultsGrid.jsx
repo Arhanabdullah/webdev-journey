@@ -9,32 +9,36 @@ const ResultsGrid = () => {
     const dispatch = useDispatch()
     const { query, activeTab, results, loading, error } = useSelector((store) => store.search)
     let data = [];
-    
-    
+
+
     useEffect(() => {
-        if (!query) return <h1 className='text-center text-3xl mt-10'>Please enter a search query</h1>
+        if (!query) return
         const getData = async () => {
             try {
                 dispatch(setLoading())
                 if (activeTab === 'Photos') {
                     let response = await getPhotos(query)
+
                     data = response.map((item) => ({
                         id: item.id,
                         title: item.alt_description,
                         type: 'photo',
                         url: item.urls.full,
-                        thumbnail: item.urls.thumb
+                        thumbnail: item.urls.thumb,
+                        link: item.links.html
                     }))
-                    console.log(data);
+
 
                 }
                 if (activeTab === 'Videos') {
                     let response = await getVideos(query)
+                    console.log(response.video);
                     data = response.videos.map((item) => ({
                         id: item.user.id,
                         title: item.user.name,
                         type: 'video',
-                        url: item.video_files[0].link,
+                        download_url: item.video_files[0].link,
+                        url: item.url,
                         thumbnail: item.image
                     }))
                     console.log(data);
@@ -48,11 +52,11 @@ const ResultsGrid = () => {
     }, [query, activeTab])
 
     if (error) return <h1>Error</h1>
-    if (loading) return <h1>Loading</h1>
+    if (loading) return <h1>Loading...</h1>
     return (
-        <div>
-            {results.map((item,idx)=>{
-                return <div key = {idx}>
+        <div className='flex justify-between flex-wrap gap-6'>
+            {results.map((item, idx) => {
+                return <div key={idx}>
                     <ResultsCard item={item} />
                 </div>
             })}
