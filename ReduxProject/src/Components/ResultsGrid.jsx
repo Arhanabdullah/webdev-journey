@@ -38,7 +38,7 @@ const ResultsGrid = () => {
                         title: item.user.name,
                         type: 'video',
                         download_url: item.video_files[0].link,
-                        url: item.url,
+                        link: item.url,
                         thumbnail: item.image
                     }))
                     console.log(data);
@@ -54,7 +54,7 @@ const ResultsGrid = () => {
     if (error) return <h1>Error</h1>
     if (loading) return <h1>Loading...</h1>
     return (
-        <div className='flex justify-between flex-wrap gap-6'>
+        <div className='flex justify-between flex-wrap gap-4'>
             {results.map((item, idx) => {
                 return <div key={idx}>
                     <ResultsCard item={item} />
