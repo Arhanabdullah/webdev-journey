@@ -32,7 +32,7 @@ const ResultsGrid = () => {
                 }
                 if (activeTab === 'Videos') {
                     let response = await getVideos(query)
-                    console.log(response.video);
+
                     data = response.videos.map((item) => ({
                         id: item.user.id,
                         title: item.user.name,
@@ -41,7 +41,7 @@ const ResultsGrid = () => {
                         link: item.url,
                         thumbnail: item.image
                     }))
-                    console.log(data);
+
                 }
                 dispatch(setResults(data))
             } catch (error) {
