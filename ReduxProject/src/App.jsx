@@ -1,17 +1,17 @@
-import React from 'react'
-import { getPhotos } from './Api/mediaApi'
-import { getVideos } from './Api/mediaApi'
-import SearchBar from './Components/SearchBar'
-import Tabs from './Components/Tabs'
-import ResultsGrid from './Components/ResultsGrid'
+import { Route, Routes } from 'react-router-dom'
+import HomePage from './Pages/HomePage'
+import CollectionPages from './Pages/CollectionPages'
+import Navbar from './Components/Navbar'
 
 const App = () => {
   return (
-    <div className='bg-gray-800 text-white h-full w-full'>
-      <SearchBar />
-      <Tabs />
-      <ResultsGrid />
-    </div>
+    <div className='h-screen text-white w-full bg-gray-800'>
+      <Navbar/>
+    <Routes>
+        <Route path='/' element={<HomePage />}/>
+        <Route path='/collections' element={<CollectionPages />}/>
+      </Routes>
+      </div>
   )
 }
 
