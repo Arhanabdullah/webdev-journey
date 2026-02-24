@@ -5,7 +5,7 @@ import Navbar from './Components/Navbar'
 import { ToastContainer, toast } from 'react-toastify';
 const App = () => {
   return (
-    <div className='h-screen text-white w-full bg-gray-800'>
+    <div className='h-full text-white w-full bg-gray-800'>
       <Navbar />
       <Routes>
         <Route path='/' element={<HomePage />} />
