@@ -1,15 +1,15 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { getPhotos, getVideos } from '../Api/mediaApi'
-import { setError, setLoading, setQuery, setResults } from '../redux/features/SearchSlice'
+import { setError, setLoading, setQuery, setResults,setPage } from '../redux/features/SearchSlice'
 import ResultsCard from './ResultsCard'
 
 const ResultsGrid = () => {
 
     const dispatch = useDispatch()
-    const { query, activeTab, results, loading, error } = useSelector((store) => store.search)
+    const { query, activeTab, results, loading, error, page } = useSelector((store) => store.search)
     let data = [];
-
+    
 
     useEffect(() => {
         if (!query) return
@@ -17,7 +17,7 @@ const ResultsGrid = () => {
             try {
                 dispatch(setLoading())
                 if (activeTab === 'Photos') {
-                    let response = await getPhotos(query)
+                    let response = await getPhotos(query, page)
 
                     data = response.map((item) => ({
                         id: item.id,
@@ -31,7 +31,7 @@ const ResultsGrid = () => {
 
                 }
                 if (activeTab === 'Videos') {
-                    let response = await getVideos(query)
+                    let response = await getVideos(query, page)
 
                     data = response.videos.map((item) => ({
                         id: item.user.id,
@@ -49,11 +49,12 @@ const ResultsGrid = () => {
             }
         }
         getData()
-    }, [query, activeTab])
+    }, [query, activeTab, page])
 
     if (error) return <h1>Error</h1>
     if (loading) return <h1>Loading...</h1>
     return (
+        <>
         <div className='flex justify-between flex-wrap gap-4'>
             {results.map((item, idx) => {
                 return <div key={idx}>
@@ -61,6 +62,10 @@ const ResultsGrid = () => {
                 </div>
             })}
         </div>
+            
+
+        </>
+        
     )
 }
 
